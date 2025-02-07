@@ -11,17 +11,21 @@ import { Footer } from "@widgets/Footer";
 function App() {
   return (
     <div className="max-w-[1400px] overflow-hidden">
-      <BrowserRouter>
-        <Header style={{}} />
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/collection" element={<Collection />} />
-          <Route path="*" element={<NothingFound />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <div className="flex min-h-screen flex-col">
+        <BrowserRouter>
+          <Header />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/categories" element={<Categories />} />
+              <Route path="/collection" element={<Collection />} />
+              <Route path="*" element={<NothingFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </BrowserRouter>
+      </div>
     </div>
   );
 }

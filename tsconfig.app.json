@@ -13,6 +13,7 @@
       "@assets/*": ["src/assets/*"],
       "@shared/*": ["src/shared/*"],
       "@widgets/*": ["src/widgets/*"],
+      "@feature/*": ["src/feature/*"],
       "@pages/*": ["src/pages/*"]
     },
 

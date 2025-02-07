@@ -17,7 +17,7 @@ type Props = {
 const Footer = ({ className }: Props) => {
   return (
     <div
-      className={`${className} flex flex-col items-center space-y-6 bg-darkGrey px-5 py-10 md:flex-row md:justify-around md:space-y-0 md:text-left`}
+      className={`${className} z-20 flex flex-col items-center space-y-6 bg-darkGrey px-5 py-10 md:flex-row md:justify-around md:space-y-0 md:text-left`}
     >
       <div className="flex flex-col items-center space-y-4 md:flex-row md:justify-between md:space-x-8 md:space-y-0">
         <div className="flex flex-col items-center space-y-4 md:items-start md:space-y-5">
