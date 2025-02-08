@@ -3,7 +3,7 @@ import { Particle } from "@shared/ui/Particle/Particle";
 import { Title } from "@shared/ui/Title/Title";
 import { Link } from "react-router";
 // import { Size } from "@shared/ui/Card/Card";
-import { CollectionGallery } from "@/feature/CollectionGallery";
+import { CollectionGallery } from "@feature/CollectionGallery";
 
 type Props = { classname?: string };
 
@@ -19,11 +19,11 @@ type Props = { classname?: string };
 
 const CollectionSection = ({ classname }: Props) => {
   return (
-    <div className={` ${classname}`}>
+    <div className={`flex flex-col ${classname}`}>
       <CollectionGallery>
-        <div className="items flex flex-col items-start justify-start space-y-6">
+        <div className="items flex flex-col items-center justify-start space-y-6 xl:items-start">
           <Title>Confuse your mirror by our trendy outfits.</Title>
-          <div className="flex h-[120px] space-x-8">
+          <div className="flex h-auto flex-col justify-center space-y-8 md:space-y-0 xl:flex-row xl:space-x-8">
             <Particle>
               We got the best that you can wear a dress. Clothes that make you
               sophisticated.

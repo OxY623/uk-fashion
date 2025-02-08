@@ -6,6 +6,7 @@ type Props = {
   classname?: string;
   size?: Size;
   cardData?: CardData;
+  onClickButton?: () => void;
 };
 
 export interface CardData {
@@ -23,33 +24,38 @@ export enum Size {
   SMALL = "small",
 }
 
-const Card: FC<Props> = ({ size, cardData, classname }: Props) => {
+const Card: FC<Props> = ({
+  size,
+  cardData,
+  classname,
+  onClickButton,
+}: Props) => {
   return (
     <div
-      className={`flex flex-col items-start justify-start space-x-5 overflow-hidden text-left ${classname}`}
+      className={`z-20 flex flex-col items-start justify-start space-y-5 overflow-hidden text-left ${classname} ${size === "small" ? "h-auto" : "h-full items-center"}`}
       title="Card of model"
     >
       <div
-        className={`relative ${size === "small" ? "h-[219px] w-[164px] rounded-md" : "h-[573px] w-[455px] rounded-lg"}`}
+        className={`relative inline-block overflow-hidden ${size === "small" ? "h-[219px] w-[164px] rounded-md" : "h-full w-full rounded-lg xl:h-[573px] xl:w-[455px]"}`}
       >
         <img
-          src={cardData?.urlImg}
-          className={` ${size === "small" ? "h-[219px] w-[164px] rounded-md" : "h-[573px] w-[455px] rounded-lg"}`}
+          src={cardData?.urlImg || "default-image-url.png"}
+          className={` ${size === "small" ? "h-[219px] w-[164px] rounded-md" : "h-full w-full rounded-lg xl:h-[573px] xl:w-[455px]"}`}
         />
         <button
-          style={{ borderRadius: "82px 5px 5px 5px" }}
-          className={`group relative left-[60%] top-[-30%] z-20 flex h-[67px] w-[67px] items-center justify-center bg-grey opacity-60 hover:bg-lightPink ${size === "big" ? "hidden" : "inline-block"}`}
+          onClick={onClickButton}
+          className={`pointer group absolute bottom-0 right-0 z-20 flex h-[67px] w-[67px] items-center justify-center rounded-md rounded-s-[82px] bg-grey opacity-60 hover:h-[219px] hover:w-[164px] hover:rounded-s-md hover:bg-lightPink ${size === "big" ? "hidden" : "inline-block"}`}
         >
           <img
             alt={cardData?.description}
-            className="h-s4px ml-2 w-[24px] group-hover:scale-110"
+            className="ml-2 h-[24px] w-[24px] group-hover:ml-0 group-hover:scale-110"
             src={loop}
           />
           <span className="hidden">More details</span>
         </button>
       </div>
-      <div className="flex h-[130px] flex-col justify-start">
-        <h4 className="pt-[20px] font-displayPrompt text-2xl font-semibold text-black">
+      <div className="flex h-[130px] flex-col items-start justify-start">
+        <h4 className="font-displayPrompt text-2xl font-semibold text-black">
           {cardData?.count && cardData?.count < 10
             ? `0${cardData?.count}`
             : cardData?.count}

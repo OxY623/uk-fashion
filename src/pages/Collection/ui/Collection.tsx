@@ -6,7 +6,7 @@ type Props = {
 const Collection = (props: Props) => {
   const { children } = props;
   return (
-    <div className="md:">
+    <div className="">
       <CollectionSection />
       {children}
     </div>
