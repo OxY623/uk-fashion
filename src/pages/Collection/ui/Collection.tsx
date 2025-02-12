@@ -6,7 +6,7 @@ type Props = {
 const Collection = (props: Props) => {
   const { children } = props;
   return (
-    <div className="">
+    <div className="my-8 sm:my-[116px]">
       <CollectionSection />
       {children}
     </div>

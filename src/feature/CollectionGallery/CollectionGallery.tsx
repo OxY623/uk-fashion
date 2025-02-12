@@ -54,9 +54,9 @@ const CollectionGallery: FC<Props> = ({ classname, children }) => {
         )}
         <div className="flex flex-col items-center justify-between space-y-4 px-[58px] pt-[50px]">
           {children}
-          <div className="mobile:w-[369px] relative flex w-[169px] md:w-[560px]">
+          <div className="relative flex w-[169px] mobile:w-[369px] md:w-[560px]">
             <button
-              className="group absolute left-[-30px] top-1/2 -translate-y-1/2 transform"
+              className="focus:ring-violet-300 group absolute left-[-30px] top-1/2 -translate-y-1/2 transform focus:outline-none focus:ring"
               title="Previous"
               onClick={prevImage}
             >
@@ -68,7 +68,7 @@ const CollectionGallery: FC<Props> = ({ classname, children }) => {
             </button>
 
             <button
-              className="group absolute right-[-30px] top-1/2 -translate-y-1/2 transform"
+              className="focus:ring-violet-300 group absolute right-[-30px] top-1/2 -translate-y-1/2 transform focus:outline-none focus:ring"
               title="Next"
               onClick={nextImage}
             >
@@ -78,7 +78,7 @@ const CollectionGallery: FC<Props> = ({ classname, children }) => {
             <div className="h-full overflow-hidden">
               <div
                 ref={scrollRef}
-                className="mobile:w-[369px] mb-[-17px] flex w-[169px] space-x-[30px] overflow-x-scroll scroll-smooth md:w-[560px]"
+                className="mb-[-17px] flex w-[169px] space-x-[30px] overflow-x-scroll scroll-smooth mobile:w-[369px] md:w-[560px]"
               >
                 {data &&
                   data.map((item) => {

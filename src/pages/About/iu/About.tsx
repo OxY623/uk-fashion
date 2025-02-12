@@ -5,7 +5,7 @@ type Props = {
 const About = (props: Props) => {
   const { children } = props;
   return (
-    <div className="relative md:left-1/4 md:mt-[159px]">
+    <div className="relative my-8 sm:my-[116px] md:left-1/4">
       <AboutSection />
       {children}
     </div>

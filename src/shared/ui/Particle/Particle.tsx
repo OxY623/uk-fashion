@@ -8,7 +8,7 @@ type Props = {
 const Particle = ({ classname, children }: Props) => {
   return (
     <p
-      className={`mobile:text-xl text-left font-poppins text-base font-normal text-black ${classname}`}
+      className={`text-left font-poppins text-base font-normal text-[#666565] mobile:text-xl ${classname}`}
     >
       {children}
     </p>

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import { Particle } from "../Particle/Particle";
 import loop from "@shared/assets/icons/loop.png";
 
@@ -44,7 +44,7 @@ const Card: FC<Props> = ({
         />
         <button
           onClick={onClickButton}
-          className={`pointer group absolute bottom-0 right-0 z-20 flex h-[67px] w-[67px] items-center justify-center rounded-md rounded-s-[82px] bg-grey opacity-60 hover:h-[219px] hover:w-[164px] hover:rounded-s-md hover:bg-lightPink ${size === "big" ? "hidden" : "inline-block"}`}
+          className={`focus:ring-violet-300 pointer group absolute bottom-0 right-0 z-20 flex h-[67px] w-[67px] items-center justify-center rounded-md rounded-s-[82px] bg-grey opacity-60 hover:h-[219px] hover:w-[164px] hover:rounded-s-md hover:bg-lightPink focus:outline-none focus:ring ${size === "big" ? "hidden" : "inline-block"}`}
         >
           <img
             alt={cardData?.description}

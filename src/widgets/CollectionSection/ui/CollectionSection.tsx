@@ -35,7 +35,7 @@ const CollectionSection = ({ classname }: Props) => {
           </div>
           <Link
             to="#"
-            className="focus:ring-violet-300 font-displayPrompt text-2xl font-medium underline underline-offset-4 focus:outline focus:ring"
+            className="focus:ring-violet-300 font-displayPrompt text-2xl font-medium underline underline-offset-4 focus:outline-none focus:outline focus:ring"
           >
             View Collection
           </Link>
