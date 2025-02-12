@@ -75,7 +75,7 @@ const CollectionGallery: FC<Props> = ({ classname, children }) => {
               className={`focus:ring-violet-300 group absolute right-[-30px] top-1/2 -translate-y-1/2 transform focus:outline-none focus:ring ${isNextButtonDisabled ? "hidden" : ""}`}
               title="Next"
               onClick={nextImage}
-              disabled={isNextButtonDisabled}
+              disabled={isNextButtonDisabled ? true : false}
             >
               <span className="hidden">Next</span>
               <img
