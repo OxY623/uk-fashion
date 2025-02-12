@@ -1,7 +1,10 @@
 # React + TypeScript + Vite
 
 -[Watch site TailwindCSS](https://uk-fashion89.netlify.app/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ff606c47-45c5-4fff-b4ee-45a7e1e3cddc/deploy-status)](https://app.netlify.com/sites/uk-fashion89/deploys) -[Maket Figma](https://www.figma.com/design/yeKMC670QCCnvYWHW896fs/Untitled?node-id=0-1&p=f&t=0goCnADATcjcLJjl-0)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ff606c47-45c5-4fff-b4ee-45a7e1e3cddc/deploy-status)](https://app.netlify.com/sites/uk-fashion89/deploys) 
+
+-[Maket Figma](https://www.figma.com/design/yeKMC670QCCnvYWHW896fs/Untitled?node-id=0-1&p=f&t=0goCnADATcjcLJjl-0)
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
