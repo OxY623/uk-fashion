@@ -39,6 +39,7 @@ const Card: FC<Props> = ({
         className={`relative inline-block overflow-hidden ${size === "small" ? "h-[219px] w-[164px] rounded-md" : "h-full w-full rounded-lg xl:h-[573px] xl:w-[455px]"}`}
       >
         <img
+          alt={cardData?.description}
           src={cardData?.urlImg || "default-image-url.png"}
           className={` ${size === "small" ? "h-[219px] w-[164px] rounded-md" : "h-full w-full rounded-lg xl:h-[573px] xl:w-[455px]"}`}
         />

@@ -60,6 +60,7 @@ const Header: FC<Props> = (props) => {
       <div className="h-full px-5 md:px-0">
         <header className="relative z-40 flex flex-row items-center justify-between space-x-3 p-4 md:justify-around">
           <button
+            title="Menu"
             onClick={handleClickBurgerMenu}
             className="focus:ring-violet-300 easy-lenaer deleay-100 group transition-transform hover:underline focus:outline-none focus:ring md:hidden"
           >
