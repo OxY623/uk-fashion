@@ -12,4 +12,4 @@ const Collection = (props: Props) => {
     </div>
   );
 };
-export { Collection };
+export default Collection;

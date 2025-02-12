@@ -1,2 +1,2 @@
-import { Collection } from "./ui/Collection";
-export { Collection };
+import Collection  from "./ui/Collection";
+export default Collection;

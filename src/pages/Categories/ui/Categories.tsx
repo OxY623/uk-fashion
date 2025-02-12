@@ -13,4 +13,4 @@ const Categories = (props: Props) => {
     </div>
   );
 };
-export { Categories };
+export default Categories;

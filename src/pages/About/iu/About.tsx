@@ -11,4 +11,4 @@ const About = (props: Props) => {
     </div>
   );
 };
-export { About };
+export default About;

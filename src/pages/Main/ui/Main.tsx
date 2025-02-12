@@ -1,4 +1,4 @@
-import { Categories } from "@pages/Categories";
+import { CategoriesSection } from "@widgets/CategoriesSection";
 import { AboutSection } from "@widgets/AboutSection";
 import { CollectionSection } from "@widgets/CollectionSection";
 type Props = {
@@ -15,10 +15,13 @@ const Main = (props: Props) => {
         <CollectionSection />
       </section>
       <section>
-        <Categories />
+        <CategoriesSection />
+      </section>
+      <section>
+        <div className="my-8"></div>
       </section>
       {children}
     </div>
   );
 };
-export { Main };
+export default Main;

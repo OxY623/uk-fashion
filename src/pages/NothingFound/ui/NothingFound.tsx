@@ -23,4 +23,4 @@ const NothingFound = () => {
     </div>
   );
 };
-export { NothingFound };
+export default NothingFound;

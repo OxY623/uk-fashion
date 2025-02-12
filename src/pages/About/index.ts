@@ -1,2 +1,2 @@
-import { About } from "./iu/About.tsx";
-export { About };
+import About from "./iu/About.tsx";
+export default About;

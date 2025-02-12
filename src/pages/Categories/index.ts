@@ -1,2 +1,2 @@
-import { Categories } from "./ui/Categories";
-export { Categories };
+import Categories from "./ui/Categories";
+export default Categories;
