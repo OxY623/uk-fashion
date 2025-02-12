@@ -11,7 +11,8 @@ type Props = {
 const CollectionGallery: FC<Props> = ({ classname, children }) => {
   const [data] = useState<CardData[]>([...collectionCardsData]);
   const [dataBigCard, setBigCard] = useState<CardData>(data[0]);
-  const [selectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0); // Добавим состояние для scrollLeft
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -20,21 +21,35 @@ const CollectionGallery: FC<Props> = ({ classname, children }) => {
     }
   }, [selectedIndex]);
 
+  useEffect(() => {
+    if (scrollRef.current) {
+      setScrollLeft(scrollRef.current.scrollLeft);
+    }
+  }, [scrollRef?.current?.scrollLeft]); // Слежение за изменениями scrollLeft
+
   const nextImage = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollLeft += 194; // Adjust the scroll offset as needed
+      setSelectedIndex((prevIndex) => prevIndex + 1); // Увеличиваем индекс
     }
   };
 
   const prevImage = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollLeft -= 194; // Adjust the scroll offset as needed
+      setSelectedIndex((prevIndex) => prevIndex - 1); // Уменьшаем индекс
     }
   };
 
   const handleClickButton = (id: number) => {
     setBigCard(data.find((item) => item.count === id) || data[0]);
   };
+
+  const isPrevButtonDisabled = scrollLeft === 0; // Логика для кнопки "Prev"
+  const isNextButtonDisabled =
+    scrollLeft >=
+    (scrollRef.current?.scrollWidth || 0) -
+      (scrollRef.current?.clientWidth || 0); // Логика для кнопки "Next"
 
   return (
     <div className={`mx-auto flex items-end gap-4 p-4 ${classname}`}>
@@ -56,29 +71,41 @@ const CollectionGallery: FC<Props> = ({ classname, children }) => {
           {children}
           <div className="relative flex w-[169px] mobile:w-[369px] md:w-[560px]">
             <button
-              className="focus:ring-violet-300 group absolute left-[-30px] top-1/2 -translate-y-1/2 transform focus:outline-none focus:ring"
+              className={`focus:ring-violet-300 group absolute left-[-30px] top-1/2 -translate-y-1/2 transform focus:outline-none focus:ring ${isPrevButtonDisabled ? "hidden" : ""}`}
               title="Previous"
               onClick={prevImage}
+              disabled={isPrevButtonDisabled}
             >
               <span className="hidden">Prev</span>
               <img
+                aria-hidden
+                alt=""
                 className="rotate-180 group-hover:scale-110"
                 src={iconDirection}
               />
             </button>
 
             <button
-              className="focus:ring-violet-300 group absolute right-[-30px] top-1/2 -translate-y-1/2 transform focus:outline-none focus:ring"
+              className={`focus:ring-violet-300 group absolute right-[-30px] top-1/2 -translate-y-1/2 transform focus:outline-none focus:ring ${isNextButtonDisabled ? "hidden" : ""}`}
               title="Next"
               onClick={nextImage}
+              disabled={isNextButtonDisabled}
             >
               <span className="hidden">Next</span>
-              <img className="group-hover:scale-110" src={iconDirection} />
+              <img
+                aria-hidden
+                alt=""
+                className="group-hover:scale-110"
+                src={iconDirection}
+              />
             </button>
             <div className="h-full overflow-hidden">
               <div
                 ref={scrollRef}
                 className="mb-[-17px] flex w-[169px] space-x-[30px] overflow-x-scroll scroll-smooth mobile:w-[369px] md:w-[560px]"
+                onScroll={() =>
+                  setScrollLeft(scrollRef.current?.scrollLeft || 0)
+                } // Обновляем scrollLeft при прокрутке
               >
                 {data &&
                   data.map((item) => {
