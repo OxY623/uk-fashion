@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-const Loading = (props: Props) => {
+const Loading = () => {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-darkPink text-2xl font-semibold">
       <div className="animate-pulse font-poppins text-white">Loading...</div>

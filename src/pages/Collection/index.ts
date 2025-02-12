@@ -1,2 +1,2 @@
-import Collection  from "./ui/Collection";
+import Collection from "./ui/Collection";
 export default Collection;
