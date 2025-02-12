@@ -84,7 +84,7 @@ const Header: FC<Props> = (props) => {
           <Button classname="text-xs sm:text-lg">Contact us</Button>
         </header>
         <div
-          className={`${
+          className={`md:hidden ${
             isActiveBurgerMenu ? "block opacity-100" : "hidden opacity-0"
           } transition-all delay-100 ease-in-out`}
         >
