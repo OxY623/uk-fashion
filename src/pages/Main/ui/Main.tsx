@@ -1,6 +1,8 @@
 import { CategoriesSection } from "@widgets/CategoriesSection";
 import { AboutSection } from "@widgets/AboutSection";
 import { CollectionSection } from "@widgets/CollectionSection";
+import { FormSection } from "@widgets/FormSection";
+import { TestimonialSection } from "@widgets/TestimonialSection";
 type Props = {
   children?: React.ReactNode;
 };
@@ -18,7 +20,10 @@ const Main = (props: Props) => {
         <CategoriesSection />
       </section>
       <section>
-        <div className="my-8"></div>
+        <TestimonialSection />
+      </section>
+      <section>
+        <FormSection />
       </section>
       {children}
     </div>
